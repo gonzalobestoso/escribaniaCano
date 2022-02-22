@@ -1,0 +1,86 @@
+/* reseteo margenes */
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#grillaInfoRedes{
+
+    display: grid;
+    grid-template-areas: "direccion redes" ;
+    grid-template-rows: 30px;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    background: #00416A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.direccion{
+    grid-area: direccion;
+    color: grey;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11px;
+    margin-right: 60%
+      
+}
+
+.redes{
+    grid-area: redes;
+    margin-left: 70%
+          
+}
+
+.redes img{
+    margin: 10px;
+}
+
+#grillaMenu{
+
+    display: grid;
+    grid-template-areas: "logo menu" ;
+    grid-template-rows: 50px;
+    grid-template-columns: 20% 70%;
+    column-gap: 10%;
+    align-items: center;
+    background: #00416A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+.logo{
+    grid-area: logo;
+             
+}
+
+.logo a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    margin-left: 30%;
+    
+}
+
+.menu{
+    grid-area: menu;
+}
+
+nav ul{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
