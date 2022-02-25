@@ -7,7 +7,7 @@
 }
 
 main{
-    background: #F2F2F2;
+    background: #dbdbf7;
     height: 1500px;
     width: 100%;  
 
@@ -20,8 +20,7 @@ main{
     grid-template-areas: "direccion redes" 
                          "logo menu";
     background: linear-gradient(to left, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    align-items: center;
-    grid-template-rows: 40% 40%;
+    grid-template-rows: 40% 60%;
     grid-template-columns: 50% 50%;
     
  
@@ -34,6 +33,7 @@ main{
     font-family: Roboto;
     font-size: 10px;
     color: white;
+    align-self: center;
     
 
     
@@ -58,6 +58,7 @@ main{
     justify-self: center;  
 }
 
+
 .logo a{
     text-decoration: none;
     color: white;
@@ -68,8 +69,11 @@ main{
 
 .menu{
     grid-area: menu;
+    align-self: center;
     
+
     
+       
 }
 
 nav ul{
@@ -78,6 +82,9 @@ nav ul{
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
+    
+    
+    
     
 }
 
@@ -125,93 +132,92 @@ nav ul li a{
         
 }
 
-.welcome{
-    display:flex;
-    flex-direction: column;
-    
-    
-
-}
 
 .titulo{
-    text-align: center;
-    font-family: 'Redressed', cursive;
-    font-size: 60px;
-    padding-top: 10px;
+    font-family: roboto;
+    font-size: 40px;
+    
 }
 
 .subtitulo{
-    text-align: center;
-    font-family: Roboto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+
 }
 
 
-/* efectos para cartas y botones*/
-button {
-    position: relative;
-    padding: 19px 36px;
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    border-radius: 40px;
-    border: none;
-   }
-   
-   button span {
-    position: relative;
-    color: #fff;
-    font-family: Arial;
-    letter-spacing: 8px;
-    z-index: 1;
-   }
-   
-   button .liquid {
-    position: absolute;
-    top: -80px;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: #4973ff;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
-    transition: .5s;
-   }
-   
-   button .liquid::after,
-   button .liquid::before {
-    content: '';
-    width: 200%;
-    height: 200%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -75%);
-    background: #fff;
-   }
-   
-   button .liquid::before {
-    border-radius: 45%;
-    background: rgba(20, 20, 20, 1);
-    animation: animate 5s linear infinite;
-   }
-   
-   button .liquid::after {
-    border-radius: 40%;
-    background: rgba(20, 20, 20, .5);
-    animation: animate 10s linear infinite;
-   }
-   
-   button:hover .liquid {
-    top: -120px;
-   }
-   
-   @keyframes animate {
-    0% {
-     transform: translate(-50%, -75%) rotate(0deg);
+#carouselExampleCaptions img{
+    
+    height: 400px;
+    margin-top: 20px;
+}
+
+/* media queries para mobile */
+@media only screen and (max-width: 600px){
+
+    #grillaMenu{
+        height: 100px;
+        display: grid;
+        grid-template-areas: "direccion" 
+                              "redes" 
+                              "logo";
+                              
+        background: linear-gradient(to left, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        grid-template-rows: 33% 33% 33% ;
+        grid-template-columns: 100%;
+        
+     
+        
     }
-   
-    100% {
-     transform: translate(-50%, -75%) rotate(360deg);
+
+    .direccion{
+        grid-area: direccion;
+        justify-self: center;
+        font-family: Roboto;
+        font-size: 10px;
+        color: white;
+        align-self: center;
+        
+    
+        
     }
-   }
+    
+    .redes{
+        grid-area: redes;
+        justify-self: center;
+        align-self: center;
+        
+        
+        
+    }
+    
+    
+    
+    .logo{
+        grid-area: logo;
+        justify-self: center;  
+    }
+    
+    
+    .logo a{
+        text-decoration: none;
+        color: white;
+        font-family: 'Redressed', cursive;
+        font-size: 20px;
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+    
+
+
+
