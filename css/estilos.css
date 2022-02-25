@@ -6,6 +6,7 @@
     
 }
 
+/*fondo general, alto de pagina y ancho */
 main{
     background: #dbdbf7;
     height: 1500px;
@@ -14,19 +15,22 @@ main{
 
 }
 
+/*grilla de 2 filas y 2 columnas para el menu y seccion redes */
 #grillaMenu{
     height: 100px;
     display: grid;
     grid-template-areas: "direccion redes" 
                          "logo menu";
-    background: linear-gradient(to left, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #4286f4, #373B44); 
     grid-template-rows: 40% 60%;
     grid-template-columns: 50% 50%;
+    
     
  
     
 }
 
+/* clase para la direccion del menu y colocacion en area especifica */
 .direccion{
     grid-area: direccion;
     justify-self: center;
@@ -34,31 +38,44 @@ main{
     font-size: 10px;
     color: white;
     align-self: center;
+    height: 50%;
     
 
     
 }
 
+/* sin decorado y color para el link de la direccion del menu */
+.direccion a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* alineado de iconos redes sociales y colocacion en area especifica*/
 .redes{
     grid-area: redes;
     justify-self: right;
-    margin-right: 22px;
+    padding-right: 22px;
     
     
 }
 
+/* separacion entre iconos redes sociales */
 .redes img{
     margin: 5px;
     
         
 }
 
+/* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
 .logo{
     grid-area: logo;
-    justify-self: center;  
+    justify-self: center;
+    align-self: center;
+    height: 100%;  
 }
 
-
+/* alineado de iconos redes sociales */
 .logo a{
     text-decoration: none;
     color: white;
@@ -67,45 +84,42 @@ main{
     
 }
 
+/* alineado de menu y colocacion en area especifica */
 .menu{
     grid-area: menu;
-    align-self: center;
-    
-
-    
-       
+    align-self: center;       
 }
 
+/* estilos para la lista no ordenada que forma el menu */
 nav ul{
     margin-top: 5px;
     display: flex;
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
-    
-    
-    
-    
+  
 }
 
+/*quitando decorado de links del menu y dando estilo */
 nav ul li a{
     text-decoration: none;
     color: white;
     font-family: Roboto, sans-serif;
 }
 
+/* grilla para el pie de pagina con una fila y dos columnas*/
 #grillaFooter{
     height: 50px;
     display: grid;
     grid-template-areas: "direccion_footer redes_footer";
-    background: linear-gradient(to left, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #4286f4, #373B44); 
     align-items: center;
     grid-template-rows: 100%;
     grid-template-columns: 50% 50%;   
 
 }
 
-
+/* clase para la direccion del pie de pagina y colocacion en area especifica */
 .direccion_footer{
     grid-area: direccion_footer;
     justify-self: left;
@@ -113,63 +127,81 @@ nav ul li a{
     font-size: 10px;
     color: white;
     margin-left: 22px;
-    
-
+    padding-top: 15px;
     
 }
 
+/* sin decorado y color para el link de la direccion del footer */
+.direccion_footer a{
+    text-decoration: none;
+    color: white;
+
+}
+
+/* clase para las imagenes de redes del footer y colocacion en area especifica */
 .redes_footer{
     grid-area: redes_footer;
     justify-self: right;
-    margin-right: 22px;
+    padding-right: 22px;
     
     
 }
 
+/* separacion entre imagenes de redes del footer */
 .redes_footer img{
     margin: 5px;
-    
-        
+           
 }
 
-
+/*clase para usar en titulos */
 .titulo{
     font-family: roboto;
     font-size: 40px;
     
 }
 
+/* clase para usar en subtitulos */
 .subtitulo{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
 
 }
 
-
+/* definir los tamaños de las imagenes del carrusel de bootstrap */
 #carouselExampleCaptions img{
-    
     height: 400px;
     margin-top: 20px;
+}
+
+.mapa{
+    height: 300px;
+    width: 300px;
+    
+}
+
+.mapa iframe{
+    justify-self: center;
 }
 
 /* media queries para mobile */
 @media only screen and (max-width: 600px){
 
+    /* grilla para menu con 4 filas y una columna*/
     #grillaMenu{
-        height: 100px;
+        height: 100%;
         display: grid;
         grid-template-areas: "direccion" 
                               "redes" 
-                              "logo";
+                              "logo"
+                              "menu";
                               
-        background: linear-gradient(to left, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        grid-template-rows: 33% 33% 33% ;
+        background: linear-gradient(to left, #4286f4, #373B44); 
+        grid-template-rows: 25% 25% 25% 25% ;
         grid-template-columns: 100%;
-        
-     
-        
+                
     }
 
+    /* clase para la direccion del menu y colocacion en area especifica */
     .direccion{
         grid-area: direccion;
         justify-self: center;
@@ -177,28 +209,30 @@ nav ul li a{
         font-size: 10px;
         color: white;
         align-self: center;
+        height: 50%;
         
     
         
     }
-    
+    /* alineado de iconos redes sociales y colocacion en area especifica*/
     .redes{
         grid-area: redes;
         justify-self: center;
         align-self: center;
-        
-        
+        padding-left: 30px;
         
     }
-    
-    
-    
+ 
+    /* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
     .logo{
         grid-area: logo;
-        justify-self: center;  
+        justify-self: center;
+        align-self: center;  
+        height: 70%;
+      
     }
     
-    
+    /* alineado de iconos redes sociales */
     .logo a{
         text-decoration: none;
         color: white;
@@ -206,9 +240,73 @@ nav ul li a{
         font-size: 20px;
         
     }
+
+    /* alineado de menu y colocacion en area especifica */
+    .menu{
+            grid-area: menu;
+            align-self: center;         
+    }
+     
+    /* estilos para la lista no ordenada que forma el menu */
+    nav ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+            width: 90%;
+    }
+    
+    /*quitando decorado de links del menu y dando estilo */
+    nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-family: Roboto, sans-serif;
+            font-size: 10px;
+    }
+
+    /* grilla para el pie de pagina con dos filas y una columna*/
+    #grillaFooter{
+        height: 80px;
+        width: 100%;
+        display: grid;
+        grid-template-areas: "direccion_footer" 
+                              "redes_footer";
+        background: linear-gradient(to left, #4286f4, #373B44); 
+        align-items: center;
+        grid-template-rows: 49% 49%;
+        grid-template-columns: 100%;   
+    }
+    
+    /* clase para la direccion del pie de pagina y colocacion en area especifica */
+    .direccion_footer{
+        grid-area: direccion_footer;
+        font-family: Roboto;
+        font-size: 10px;
+        color: white;
+        align-self: center;
+        padding-left: 12px;
+         
+    }
+
+    /* sin decorado y color para el link de la direccion del footer */
+    .direccion_footer a{
+        text-decoration: none;
+        color: white;
+
+    }
     
     
+    /* clase para las imagenes de redes del footer y colocacion en area especifica */
+    .redes_footer{
+        grid-area: redes_footer;
+        justify-self: center;
+        padding-left: 30px;
+        
+    }
+
 }
+    
+
 
 
 
