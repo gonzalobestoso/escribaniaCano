@@ -173,18 +173,31 @@ nav ul li a{
     margin-top: 20px;
 }
 
-.mapa{
-    height: 300px;
-    width: 300px;
-    
+
+/* estilos para hacer resposnive el mapa */
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+
 }
 
-.mapa iframe{
-    justify-self: center;
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    padding-top: 10px;
+
 }
+
+
+
 
 /* media queries para mobile */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 787px){
 
     /* grilla para menu con 4 filas y una columna*/
     #grillaMenu{
@@ -284,8 +297,8 @@ nav ul li a{
         font-size: 10px;
         color: white;
         align-self: center;
-        padding-left: 12px;
-         
+        justify-self: center;
+        
     }
 
     /* sin decorado y color para el link de la direccion del footer */
