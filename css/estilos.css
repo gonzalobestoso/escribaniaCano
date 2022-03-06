@@ -1,429 +1,279 @@
+@charset "UTF-8";
 /* reseteo margenes */
-
-*{
-    margin: 0;
-    padding: 0;
-    
-}
+* {
+  margin: 0;
+  padding: 0; }
 
 /*fondo general, ancho de pagina  */
-main{
-    background: #dbdbf7;
-    width: 100%; 
-        
-}
+main {
+  background: #dbdbf7;
+  width: 100%; }
 
 /*grilla de 2 filas y 2 columnas para el menu y seccion redes */
-#grillaMenu{
-    height: 100px;
-    display: grid;
-    grid-template-areas: "direccion redes" 
-                         "logo menu";
-    background: linear-gradient(to left, #4286f4, #373B44); 
-    grid-template-rows: 40% 60%;
-    grid-template-columns: 50% 50%;
-    border-top: 4px solid white;
-            
-}
+#grillaMenu {
+  height: 100px;
+  display: grid;
+  grid-template-areas: "direccion redes"  "logo menu";
+  background: linear-gradient(to left, #4286f4, #373B44);
+  grid-template-rows: 40% 60%;
+  grid-template-columns: 50% 50%;
+  border-top: 4px solid white; }
 
 /* clase para la direccion del menu y colocacion en area especifica */
-.direccion{
+.direccion {
+  grid-area: direccion;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: white;
+  align-self: center;
+  height: 50%;
+  padding-left: 22px; }
+
+/* sin decorado y color para el link de la direccion del menu */
+.direccion a {
+  text-decoration: none;
+  color: white; }
+
+/* alineado de iconos redes sociales y colocacion en area especifica*/
+.redes {
+  grid-area: redes;
+  justify-self: right;
+  padding-right: 22px; }
+
+/* separacion entre iconos redes sociales */
+.redes img {
+  margin: 5px; }
+
+/* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
+.logo {
+  grid-area: logo;
+  justify-self: center;
+  align-self: center;
+  height: 100%; }
+
+/* alineado de iconos redes sociales */
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 33px; }
+
+/* alineado de menu y colocacion en area especifica */
+.menu {
+  grid-area: menu;
+  align-self: center; }
+
+/* estilos para la lista no ordenada que forma el menu */
+nav ul {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: space-evenly; }
+
+/*quitando decorado de links del menu y dando estilo */
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-family: 'Roboto', sans-serif; }
+
+/* grilla para el pie de pagina con una fila y dos columnas*/
+#grillaFooter {
+  height: 50px;
+  display: grid;
+  grid-template-areas: "direccion_footer redes_footer";
+  background: linear-gradient(to left, #4286f4, #373B44);
+  align-items: center;
+  grid-template-rows: 100%;
+  grid-template-columns: 50% 50%;
+  border-top: 4px solid white; }
+
+/* clase para la direccion del pie de pagina y colocacion en area especifica */
+.direccion_footer {
+  grid-area: direccion_footer;
+  justify-self: left;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: white;
+  padding-left: 22px;
+  padding-top: 15px; }
+
+/* sin decorado y color para el link de la direccion del footer */
+.direccion_footer a {
+  text-decoration: none;
+  color: white; }
+
+/* clase para las imagenes de redes del footer y colocacion en area especifica */
+.redes_footer {
+  grid-area: redes_footer;
+  justify-self: right;
+  padding-right: 22px; }
+
+/* separacion entre imagenes de redes del footer */
+.redes_footer img {
+  margin: 5px; }
+
+/*clase para usar en titulos */
+.titulo {
+  font-family: 'Roboto';
+  color: black;
+  font-size: 40px; }
+
+/* clase para usar en subtitulos */
+.subtitulo {
+  font-family: 'Roboto';
+  color: grey;
+  font-size: 20px; }
+
+/* definir los tamaños de las imagenes del carrusel de bootstrap */
+#carouselExampleCaptions img {
+  height: 400px;
+  margin-top: 20px; }
+
+/* estilos para hacer resposnive el mapa */
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0; }
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding-top: 10px; }
+
+/* efecto para los botones del menu */
+.boton {
+  position: relative;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); }
+
+.boton:hover {
+  box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+  outline-color: rgba(49, 138, 172, 0);
+  outline-offset: 80px;
+  text-shadow: 2px 2px 8px #fff; }
+
+/*efecto zoom in para imagenes de redes */
+.hoverRedes img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out; }
+
+.hoverRedes :hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3); }
+
+/*modifico el estilo de boton de bootstrap para que tenga mismo color que el del nav */
+.btn-primary {
+  background: linear-gradient(to left, #4286f4, #373B44); }
+
+/*menu hamburguesa no visible para pantallas grandes*/
+#hamburguesa {
+  display: none; }
+
+/* media queries para mobile */
+@media only screen and (max-width: 787px) {
+  /* grilla para menu con 4 filas y una columna*/
+  #grillaMenu {
+    height: 100%;
+    display: grid;
+    grid-template-areas: "direccion"  "redes"  "logo" "menu";
+    background: linear-gradient(to left, #4286f4, #373B44);
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 100%;
+    border-top: 4px solid white; }
+  /* clase para la direccion del menu y colocacion en area especifica */
+  .direccion {
     grid-area: direccion;
+    justify-self: center;
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: white;
     align-self: center;
-    height: 50%;
-    padding-left: 22px;
-    
-    
-
-    
-}
-
-/* sin decorado y color para el link de la direccion del menu */
-.direccion a{
-    text-decoration: none;
-    color: white;
-}
-
-
-/* alineado de iconos redes sociales y colocacion en area especifica*/
-.redes{
+    height: 50%; }
+  /* alineado de iconos redes sociales y colocacion en area especifica*/
+  .redes {
     grid-area: redes;
-    justify-self: right;
-    padding-right: 22px;
-    
-    
-}
-
-/* separacion entre iconos redes sociales */
-.redes img{
-    margin: 5px;
-    
-        
-}
-
-/* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
-.logo{
+    justify-self: center;
+    align-self: center;
+    padding-left: 30px;
+    padding-top: 5px; }
+  /* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
+  .logo {
     grid-area: logo;
     justify-self: center;
     align-self: center;
-    height: 100%;  
-}
-
-/* alineado de iconos redes sociales */
-.logo a{
+    height: 70%;
+    padding-top: 5px; }
+  /* alineado de iconos redes sociales */
+  .logo a {
     text-decoration: none;
     color: white;
     font-family: 'Lobster', cursive;
-    font-size: 33px;
-    
-}
-
-/* alineado de menu y colocacion en area especifica */
-.menu{
+    font-size: 20px; }
+  /* alineado de menu y colocacion en area especifica */
+  .menu {
     grid-area: menu;
-    align-self: center; 
-              
-}
-
-/* estilos para la lista no ordenada que forma el menu */
-nav ul{
-    margin-top: 5px;
-    display: flex;
+    align-self: center; }
+  /* estilos para la lista no ordenada que forma el menu */
+  nav ul {
+    display: none;
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
-  
-}
-
-/*quitando decorado de links del menu y dando estilo */
-nav ul li a{
+    width: 90%; }
+  /*quitando decorado de links del menu y dando estilo */
+  nav ul li a {
     text-decoration: none;
     color: white;
     font-family: 'Roboto', sans-serif;
-    
-}
-
-/* grilla para el pie de pagina con una fila y dos columnas*/
-#grillaFooter{
-    height: 50px;
+    font-size: 10px; }
+  /* grilla para el pie de pagina con dos filas y una columna*/
+  #grillaFooter {
+    height: 80px;
+    width: 100%;
     display: grid;
-    grid-template-areas: "direccion_footer redes_footer";
-    background: linear-gradient(to left, #4286f4, #373B44); 
+    grid-template-areas: "direccion_footer"  "redes_footer";
+    background: linear-gradient(to left, #4286f4, #373B44);
     align-items: center;
-    grid-template-rows: 100%;
-    grid-template-columns: 50% 50%; 
-    border-top: 4px solid white;  
-    
-}
-
-/* clase para la direccion del pie de pagina y colocacion en area especifica */
-.direccion_footer{
+    grid-template-rows: 49% 49%;
+    grid-template-columns: 100%;
+    border-top: 4px solid white; }
+  /* clase para la direccion del pie de pagina y colocacion en area especifica */
+  .direccion_footer {
     grid-area: direccion_footer;
-    justify-self: left;
     font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: white;
-    padding-left: 22px;
-    padding-top: 15px;
-    
-}
-
-/* sin decorado y color para el link de la direccion del footer */
-.direccion_footer a{
+    align-self: center;
+    justify-self: center; }
+  /* sin decorado y color para el link de la direccion del footer */
+  .direccion_footer a {
     text-decoration: none;
-    color: white;
-
-}
-
-/* clase para las imagenes de redes del footer y colocacion en area especifica */
-.redes_footer{
+    color: white; }
+  /* clase para las imagenes de redes del footer y colocacion en area especifica */
+  .redes_footer {
     grid-area: redes_footer;
-    justify-self: right;
-    padding-right: 22px;
-    
-    
-}
-
-/* separacion entre imagenes de redes del footer */
-.redes_footer img{
-    margin: 5px;
-           
-}
-
-/*clase para usar en titulos */
-.titulo{
-    font-family: 'Roboto';
-    color: black;
-    font-size: 40px;
-    
-}
-
-/* clase para usar en subtitulos */
-.subtitulo{
-    font-family: 'Roboto';
-    color: grey;
-    font-size: 20px;
-
-}
-
-
-
-/* definir los tamaños de las imagenes del carrusel de bootstrap */
-#carouselExampleCaptions img{
-    height: 400px;
-    margin-top: 20px;
-}
-
-
-/* estilos para hacer resposnive el mapa */
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
-
-}
-
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    padding-top: 10px;
-
-}
-
-/* efecto para los botones del menu */
-
-.boton{
-    position: relative;
-    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-
-}
-
-.boton:hover {
-    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
-    outline-color: rgba(49, 138, 172, 0);
-    outline-offset: 80px;
-    text-shadow: 2px 2px 8px #fff;
-    
-    
-    
-}
-
-/*efecto zoom in para imagenes de redes */
-
-.hoverRedes img {
-	-webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-.hoverRedes :hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
-}
-
-/*modifico el estilo de boton de bootstrap para que tenga mismo color que el del nav */
-
-.btn-primary{
-    background:linear-gradient(to left, #4286f4, #373B44);
-    
-}
-
-/*menu hamburguesa no visible para pantallas grandes*/
-#hamburguesa{
-    display: none;
-    
-}
-
-
-
-
-
-/* media queries para mobile */
-@media only screen and (max-width: 787px){
-
-    /* grilla para menu con 4 filas y una columna*/
-    #grillaMenu{
-        height: 100%;
-        display: grid;
-        grid-template-areas: "direccion" 
-                              "redes" 
-                              "logo"
-                              "menu";
-                              
-        background: linear-gradient(to left, #4286f4, #373B44); 
-        grid-template-rows: 25% 25% 25% 25% ;
-        grid-template-columns: 100%;
-        border-top: 4px solid white;
-        
-                
-    }
-
-    /* clase para la direccion del menu y colocacion en area especifica */
-    .direccion{
-        grid-area: direccion;
-        justify-self: center;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-        color: white;
-        align-self: center;
-        height: 50%;
-        
-    
-        
-    }
-    /* alineado de iconos redes sociales y colocacion en area especifica*/
-    .redes{
-        grid-area: redes;
-        justify-self: center;
-        align-self: center;
-        padding-left: 30px;
-        padding-top: 5px;
-        
-    }
- 
-    /* estilo para el logo con el nombre de la escribania y colocacion en area especifica*/
-    .logo{
-        grid-area: logo;
-        justify-self: center;
-        align-self: center;  
-        height: 70%;
-        padding-top: 5px;
-      
-    }
-    
-    /* alineado de iconos redes sociales */
-    .logo a{
-        text-decoration: none;
-        color: white;
-        font-family: 'Lobster', cursive;
-        font-size: 20px;
-        
-    }
-
-    /* alineado de menu y colocacion en area especifica */
-    .menu{
-            grid-area: menu;
-            align-self: center;
-                     
-    }
-     
-    /* estilos para la lista no ordenada que forma el menu */
-    nav ul{
-            display: none;
-            flex-direction: row;
-            list-style: none;
-            justify-content: space-evenly;
-            width: 90%;
-    }
-    
-    /*quitando decorado de links del menu y dando estilo */
-    nav ul li a{
-            text-decoration: none;
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            font-size: 10px;
-    }
-
-    /* grilla para el pie de pagina con dos filas y una columna*/
-    #grillaFooter{
-        height: 80px;
-        width: 100%;
-        display: grid;
-        grid-template-areas: "direccion_footer" 
-                              "redes_footer";
-        background: linear-gradient(to left, #4286f4, #373B44); 
-        align-items: center;
-        grid-template-rows: 49% 49%;
-        grid-template-columns: 100%;
-        border-top: 4px solid white;   
-    }
-    
-    /* clase para la direccion del pie de pagina y colocacion en area especifica */
-    .direccion_footer{
-        grid-area: direccion_footer;
-        font-family: 'Roboto', sans-serif;
-        font-size: 10px;
-        color: white;
-        align-self: center;
-        justify-self: center;
-        
-    }
-
-    /* sin decorado y color para el link de la direccion del footer */
-    .direccion_footer a{
-        text-decoration: none;
-        color: white;
-
-    }
-    
-    
-    /* clase para las imagenes de redes del footer y colocacion en area especifica */
-    .redes_footer{
-        grid-area: redes_footer;
-        justify-self: center;
-        padding-left: 30px;
-        padding-bottom: 5px;
-        
-    }
-
-    /* hago visible el menu hamburguesa cuando cumple la condicion */
-    #hamburguesa{
-        display: flex;
-        margin-right: 50px;
-        
-        
-            
-    }
-
-    /* pongo en transparente el background del menu hamburguesa */
-    .navbar-light{
-        background:transparent !important;
-        color: white;
-              
-    }
-    /*pongo en blanco el borde del icono hamburguesa*/
-    .navbar-light .navbar-toggler{
-        border-color: white;
-        
-        
-               
-    }
-
-    /* hago que las lineas del menu hamburguesa sean blancas */
-    .navbar-light .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        height: 20px;
-        width: 20px;
-        
-        
-    }
-
-
-  
-
-   
-
-    
-
-}
-    
-
-
-
-
-
-
-
-
-
-    
-
-
-
+    justify-self: center;
+    padding-left: 30px;
+    padding-bottom: 5px; }
+  /* hago visible el menu hamburguesa cuando cumple la condicion */
+  #hamburguesa {
+    display: flex;
+    margin-right: 50px; }
+  /* pongo en transparente el background del menu hamburguesa */
+  .navbar-light {
+    background: transparent !important;
+    color: white; }
+  /*pongo en blanco el borde del icono hamburguesa*/
+  .navbar-light .navbar-toggler {
+    border-color: white; }
+  /* hago que las lineas del menu hamburguesa sean blancas */
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    height: 20px;
+    width: 20px; } }
