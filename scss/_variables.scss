@@ -1,2 +1,9 @@
 $colorMain: #dbdbf7;
 $colorNavyBotones:linear-gradient(to left, #4286f4, #373B44);
+
+@mixin links ($textdecoration, $color, $fontfamily, $fontsize){
+    text-decoration: $textdecoration;
+    color: $color;
+    font-family: $fontfamily;
+    font-size: $fontsize;
+}
