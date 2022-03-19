@@ -122,7 +122,7 @@ nav {
 /*clase para usar en titulos */
 .titulo {
 	font-family: 'Kanit';
-	color: white;
+	color: black;
 	font-size: 40px;
 }
 /* clase para usar en subtitulos */
@@ -134,7 +134,7 @@ nav {
 /* uso de EXTEND para la clase titulo para usarla en el carrusel */
 .titulo--carrusel{
     @extend .titulo;
-    font-size:35px;
+    font-size:30px;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 	   
@@ -216,7 +216,7 @@ nav {
 }
 /*modifico el estilo de boton de bootstrap para que tenga mismo color que el del nav */
 .btn-primary {
-	background: linear-gradient(to left, #4286f4, #373B44);
+	background: $colorNavyBotones;
 }
 /*menu hamburguesa no visible para pantallas grandes*/
 #hamburguesa {
@@ -229,7 +229,7 @@ nav {
 }
 
 .background__principal{
-	background:$colorNavyBotones
+	background: $colorNavyBotones;
 }
 
 /* media queries para mobile */
@@ -272,7 +272,7 @@ nav {
 		a {
 			text-decoration: none;
 			color: white;
-			font-family: 'Kanit', cursive;
+			font-family: 'Kanit';
 			font-size: 20px;
 		}
 	}
@@ -362,7 +362,7 @@ nav {
 	/*clase para usar en titulos */
 .titulo {
 	font-family: 'Kanit';
-	color: white;
+	color: black;
 	font-size: 30px;
 }
 /* clase para usar en subtitulos */
@@ -370,6 +370,19 @@ nav {
 	font-family: 'Roboto';
 	color: grey;
 	font-size: 15px;
+}
+
+.graph{
+	display: flex;
+	flex-direction: row;
+	@include links (none, white, 'Roboto', 20px);
+	width: 100%;
+	height: 350px;
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+	background: $colorNavyBotones;
+	
 }
 
 }
