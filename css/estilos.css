@@ -52,7 +52,7 @@ main {
   .logo a {
     text-decoration: none;
     color: white;
-    font-family: "Lobster";
+    font-family: "Kanit";
     font-size: 33px; }
 
 /* alineado de menu y colocacion en area especifica */
@@ -111,8 +111,8 @@ nav ul {
 
 /*clase para usar en titulos */
 .titulo, .titulo--carrusel {
-  font-family: 'Roboto';
-  color: black;
+  font-family: 'Kanit';
+  color: white;
   font-size: 40px; }
 
 /* clase para usar en subtitulos */
@@ -125,7 +125,7 @@ nav ul {
 .titulo--carrusel {
   font-size: 35px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
 
 /* uso de EXTEND para la clase subtitulo para usarla en el carrusel */
 .subtitulo--carrusel {
@@ -134,8 +134,27 @@ nav ul {
 
 /* definir los tamaños de las imagenes del carrusel de bootstrap */
 #carouselExampleCaptions img {
-  height: 400px;
+  height: 600px;
   margin-top: 20px; }
+
+/*lograr que se vean mejor las letras del carrusel */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5); }
+
+/* diseño del bloque de opiniones */
+.graph {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  color: white;
+  font-family: "Roboto";
+  font-size: 30px;
+  width: 100%;
+  height: 350px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to left, #4286f4, #373B44); }
 
 /* estilos para hacer responsive el mapa */
 .map-responsive {
@@ -180,6 +199,13 @@ nav ul {
 #hamburguesa {
   display: none; }
 
+.gridServicios {
+  text-align: center;
+  font-family: 'Roboto'; }
+
+.background__principal {
+  background: linear-gradient(to left, #4286f4, #373B44); }
+
 /* media queries para mobile */
 @media only screen and (max-width: 787px) {
   /* grilla para menu con 4 filas y una columna*/
@@ -217,7 +243,7 @@ nav ul {
     .logo a {
       text-decoration: none;
       color: white;
-      font-family: 'Lobster', cursive;
+      font-family: 'Kanit', cursive;
       font-size: 20px; }
   /* alineado de menu y colocacion en area especifica */
   .menu {
@@ -283,4 +309,14 @@ nav ul {
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(255, 255, 255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
       height: 20px;
-      width: 20px; } }
+      width: 20px; }
+  /*clase para usar en titulos */
+  .titulo, .titulo--carrusel {
+    font-family: 'Kanit';
+    color: white;
+    font-size: 30px; }
+  /* clase para usar en subtitulos */
+  .subtitulo, .subtitulo--carrusel {
+    font-family: 'Roboto';
+    color: grey;
+    font-size: 15px; } }
