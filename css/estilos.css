@@ -332,4 +332,18 @@ nav ul {
     text-align: center;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(to left, #4286f4, #373B44); } }
+    background: linear-gradient(to left, #4286f4, #373B44); }
+  .background__principal {
+    background: linear-gradient(to left, #4286f4, #373B44); }
+  /* definir los tamaños de las imagenes del carrusel de bootstrap */
+  #carouselExampleCaptions img {
+    height: 300px;
+    margin-top: 20px; }
+  .titulo--carrusel {
+    font-size: 20px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; }
+  /* uso de EXTEND para la clase subtitulo para usarla en el carrusel */
+  .subtitulo--carrusel {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif; } }
